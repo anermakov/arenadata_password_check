@@ -42,7 +42,7 @@ static char *password_special_chars = "!@#$%^&*()_+{}|<>?=";
  */
 #define PASSWORD_HAS_LOWER		0x0001	/* Lower-case character */
 #define PASSWORD_HAS_UPPER		0x0002	/* Upper-case character */
-#define PASSWORD_HAS_SPECIAL	0x0004	/* Special character */
+#define PASSWORD_HAS_SPECIAL		0x0004	/* Special character */
 #define PASSWORD_HAS_NUMBER		0x0008	/* Number */
 
 extern void _PG_init(void);
@@ -88,8 +88,7 @@ check_password(const char *username,
 			 *
 			 * We only check for username = password.
 			 */
-	/*		if (!pg_md5_encrypt(username, username, namelen, encrypted, &errstr))
-				elog(ERROR, "password encryption failed: %s", errstr); */
+
 			if (strcmp(password, encrypted) == 0)
 				ereport(ERROR,
 						(errcode(ERRCODE_INVALID_PARAMETER_VALUE),
@@ -281,7 +280,6 @@ arenadata_password_check_load_params(void)
 							PGC_SUSET,
 							0, NULL, NULL, NULL);
 
-/*	MarkGUCPrefixReserved("arenadata_password_check"); */
 }
 
 /*
