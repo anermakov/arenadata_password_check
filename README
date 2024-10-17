@@ -5,10 +5,10 @@ Development
 -----------
 
 arenadata_password_check is a fork of passwordcheck, contrib module to check
-a password quality using a fork of PostgreSQL core.
+a password quality using a fork of Greenplum/Greengage core.
 
 There are two ways to compile and install the code:
-1) Copy it as contrib/arenadata_password_check in PostgreSQL code and use the
+1) Copy it as contrib/arenadata_password_check in Greenplum/Greengage code and use the
 following command:
 make install
 2) Include PostgreSQL libraries in LD_LIBRARY_PATH and use the following
