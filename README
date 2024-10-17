@@ -1,5 +1,5 @@
 arenadata_password_check
-===================
+========================
 
 Development
 -----------
@@ -25,6 +25,7 @@ make installcheck USE_PGXS=1 # Run on existing server
 
 In order to install it, install the library to server, add the following
 parameter value to postgresql.conf and restart server.
+
 gpconfig -c shared_preload_libraries -v '[other libraries], arenadata_password_check'
 
 Features
