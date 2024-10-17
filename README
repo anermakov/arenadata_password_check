@@ -17,7 +17,7 @@ make USE_PGXS=1
 make USE_PGXS=1 install
 
 Regression tests can be run as follows:
-1) Module copied in contrib of PostgreSQL:
+1) Module copied in contrib of Greenplum/Greengage:
 make check
 make installcheck # Run on existing server
 2) Module managed independently, needs a server already running.
@@ -25,7 +25,7 @@ make installcheck USE_PGXS=1 # Run on existing server
 
 In order to install it, install the library to server, add the following
 parameter value to postgresql.conf and restart server.
-shared_preload_libraries = '$libdir/arenadata_password_check'
+gpconfig -c shared_preload_libraries -v '[other libraries], arenadata_password_check'
 
 Features
 --------
